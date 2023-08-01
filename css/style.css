@@ -518,3 +518,22 @@ h6,
 .copyright a:hover {
     color: var(--primary);
 }
+
+
+
+
+.faq {
+    padding-bottom: 30px;
+  }
+  
+  .faq .faq-item {
+    margin-bottom: 40px;
+  }
+  
+  .faq .faq-item h4 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1f3548;
+  }
