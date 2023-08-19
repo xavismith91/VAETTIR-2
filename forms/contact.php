@@ -2,9 +2,11 @@
 
     $nombre =$_POST["nombre"];
     $mensaje=$_POST["message"];
-    $correo = $_POST["email"];
-    $correo2 = 'sistemas@ce2000.mx';
-    $remitente="VAETTIR";
+    $correo = $_POST["email"]; //correo donde va a llegar los datos del formulario
+    $correo2 = $_POST["correo"]; //correo del cliente 
+    $telefono = $_POST['telefono'];
+    $tiposervicio = $_POST['servicio'];
+    $remitente= "VAETTIR";
     $asunto=$_POST["subject"];
     $cuerpo="
     <html> 
@@ -12,6 +14,8 @@
     <body>
       <h3> Cliente: $nombre</h3>
       <h3> Correo: $correo </h3> 
+      <h3> Tipo de Servicio: $tiposervicio </h3>
+      <h3> Teléfono de Contacto: $telefono</h3
       <h3> $mensaje </h5>
       <h4>VAETTIR  2023</h4>
     </body> 
