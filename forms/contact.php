@@ -7,7 +7,7 @@
     $telefono = $_POST['telefono'];
     $tiposervicio = $_POST['servicio'];
     $remitente= "VAETTIR";
-    $asunto=$_POST["subject"];
+    // $asunto=$_POST["subject"];
     $cuerpo="
     <html> 
     <meta charset='UTF-8'>

@@ -1,0 +1,30 @@
+
+$cooreorecib = $_POST["email"];
+$mensaje = $_POST["message"];
+$asunto =$_POST["subject"];
+$nombre = $_POST["nombre"];
+$correo = "contacto@secmaseguridad.com.mx";
+$remitente="SECMA <contacto@secmaseguridad.com.mx>";
+$asunto="Cotización ";
+$cuerpo="
+<html> 
+<head> 
+<title>Cotización </title> 
+</head> 
+<meta charset='UTF-8'>
+<body>
+	<h1>Has recibido un correo!</h1>
+
+  <p>Te a contactado $nombre, y su email es: $correo </p>
+  <p>El Asunto es: $asunto </p>
+  <p>Con el siguiente mensaje: $mensaje </p>
+</body> 
+</html> 
+";
+$sheader="From:".$remitente."\n";
+$sheader=$sheader."X-Mailer:PHP/".phpversion()."\n";
+$sheader=$sheader."Mime-Version: 1.0\n";
+$sheader=$sheader."Content-Type: text/html; charset=utf-8\n";
+mail($correo,$asunto,$cuerpo,$sheader); 
+
+
