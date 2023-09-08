@@ -540,7 +540,7 @@ h6,
 
 /* carrusel*/
   .slider{
-    width: 900 px;
+    width:  px;
     height: auto;
     margin: auto;
     overflow: hidden;
@@ -551,15 +551,15 @@ h6,
     display: flex;
     animation: scroll 40s linear infinite;
     -webkit-animation: scroll 40% linear infinite;
-    width: calc(200px * 14);
+    width: calc(400px * 14);
   }
 
   .slider .slide {
-    width: 200px;
+    width: 400px;
   }
 
   .slider .slide img {
-    width: 100%;
+    width: 115%;
   }
 
 
@@ -570,8 +570,8 @@ h6,
     }
 
     100%{
-        -webkit-transform: translateX(calc(-200px * 7));
-        transform: translateX(calc(-200px * 7));
+        -webkit-transform: translateX(calc(-400px * 7));
+        transform: translateX(calc(-400px * 7));
     }
     
   }
