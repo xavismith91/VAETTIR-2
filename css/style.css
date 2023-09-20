@@ -575,3 +575,11 @@ h6,
     }
     
   }
+
+
+  .imgresponsive {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    object-position: bot;
+  }
