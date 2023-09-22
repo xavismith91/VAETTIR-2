@@ -30,10 +30,7 @@
 
       header("Location: ../index.html");
       
-    
-  
 
-      
 
 ?>
  
