@@ -2,8 +2,8 @@
 
     $nombre =$_POST["nombre"];
     $mensaje=$_POST["message"];
-    $correo = $_POST["email"]; //correo donde va a llegar los datos del formulario
-    $correo2 = $_POST["correo"]; //correo del cliente 
+    $correo = $_POST["correo"]; //correo donde va a llegar los datos del formulario
+    $correo2 = $_POST["email"]; //correo del cliente 
     $telefono = $_POST['telefono'];
     $tiposervicio = $_POST['servicio'];
     $remitente= "VAETTIR";
