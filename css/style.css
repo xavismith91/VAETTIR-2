@@ -584,7 +584,7 @@ h6,
     object-position: bot;
   } */
 
-  .slider {
+  /* .slider {
 	width: 95%;
 	margin: auto;
 	overflow: hidden;
@@ -619,4 +619,4 @@ h6,
 	
 	75% {margin-left: -300%;}
 	100% {margin-left: -300%;}
-}
+} */
