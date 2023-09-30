@@ -1,41 +1,26 @@
 const track = document.querySelector('.carousel-track');
-const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+const items = document.querySelectorAll('.carousel-item');
 
-// Clona el primer y último slide para el efecto continuo
-const firstSlide = slides[0];
-const lastSlide = slides[slides.length - 1];
-track.appendChild(firstSlide.cloneNode(true));
-track.insertBefore(lastSlide.cloneNode(true), firstSlide);
+const totalItems = items.length;
+const itemWidth = items[0].clientWidth;
+const totalWidth = itemWidth * totalItems;
 
-const slideWidth = slides[0].getBoundingClientRect().width;
+track.style.width = totalWidth + 'px';
 
-// Alinea los slides horizontalmente
-slides.forEach((slide, index) => {
-    slide.style.left = slideWidth * index + 'px';
-});
+function startCarousel() {
+    setInterval(() => {
+        const currentTransform = window.getComputedStyle(track).getPropertyValue('transform');
+        const currentX = new WebKitCSSMatrix(currentTransform).m41;
+        const newItemPosition = currentX - itemWidth;
+        track.style.transition = 'transform 0.3s ease-in-out';
+        track.style.transform = `translateX(${newItemPosition}px)`;
+        track.addEventListener('transitionend', () => {
+            if (currentX === -totalWidth) {
+                track.style.transition = 'none';
+                track.style.transform = `translateX(0px)`;
+            }
+        });
+    }, 2000); // Cambia esta cifra para ajustar la velocidad del carrusel
+}
 
-// Función para mover el carrusel
-const moveToSlide = (track, targetSlide) => {
-    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-};
-
-// Inicializa el carrusel en el primer slide
-let currentIndex = 1;
-moveToSlide(track, slides[currentIndex]);
-
-// Función para cambiar al siguiente slide
-const nextSlide = () => {
-    currentIndex++;
-    if (currentIndex >= slides.length - 1) {
-        currentIndex = 1;
-        track.style.transition = 'none';
-        moveToSlide(track, slides[currentIndex]);
-    }
-    setTimeout(() => {
-        track.style.transition = 'transform 0.5s ease-in-out';
-        moveToSlide(track, slides[currentIndex]);
-    });
-};
-
-// Cambia al siguiente slide cada 3 segundos (ajusta según sea necesario)
-setInterval(nextSlide, 3000);
+startCarousel();
