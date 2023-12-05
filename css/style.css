@@ -199,9 +199,21 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/pilon-electricidad-aislado.jpg) center center no-repeat;
     background-size: cover;
 }
+
+.page-contact {
+    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/vista-frontal-hombre-sonriente-hablando-telefono-junto-diseno-proyecto-energia-eolica-ecologico.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-privacy {
+    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/candadoteclado.jpeg) center center no-repeat;
+    background-size: cover;
+}
+
+
 
 .page-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
