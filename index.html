@@ -415,10 +415,10 @@
             </div>
         </div>
     </div>
-    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+    <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
     <div class="container-xxl py-5"->
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-5"> -->
                 <!-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <p class="fs-5 fw-bold text-primary">Contáctanos</p>
                     <h1 class="display-5 mb-5">Si tienes alguna duda, contáctanos.</h1>
@@ -463,7 +463,13 @@
         </div>
     </div>
     
-   
+    <div id="cookie-consent">
+        <p>Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra <a href="politica.html">Política de Privacidad</a> y el uso de cookies.</p>
+        <div>
+            <button id="accept-cookies">Aceptar</button>
+            <button id="decline-cookies">Denegar</button>
+        </div>
+    </div>
  
     <div class="container-fluid copyright py-4">
         <div class="container">
@@ -498,6 +504,23 @@
     <script src="lib/parallax/parallax.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script>
+        // Verificar si el usuario ya ha aceptado o denegado las cookies
+        if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'declined') {
+               document.getElementById('cookie-consent').style.display = 'none';
+           }
+   
+           document.getElementById('accept-cookies').addEventListener('click', function() {
+               localStorage.setItem('cookieConsent', 'accepted');
+               document.getElementById('cookie-consent').style.display = 'none';
+           });
+   
+           document.getElementById('decline-cookies').addEventListener('click', function() {
+               localStorage.setItem('cookieConsent', 'declined');
+               window.location.href = 'https://www.google.com';
+           });
+   </script>
 
     
     <script src="js/main.js"></script>
