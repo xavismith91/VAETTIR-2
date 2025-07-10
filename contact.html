@@ -222,9 +222,22 @@
     <script src="lib/parallax/parallax.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-
     <script src="js/main.js"></script>
+
+<!-- script para alerta de cierre sin terminar de llenar el formulario -->
+<script>
+window.addEventListener('beforeunload', function (e) {
+    // Mostrar un mensaje de confirmación al usuario
+    var confirmationMessage = '¿Estás seguro de que quieres salir? Los datos no guardados se perderán.';
+    
+    // Establecer el mensaje de confirmación
+    e.returnValue = confirmationMessage; // Para navegadores modernos
+    return confirmationMessage; // Para navegadores antiguos
+  });
+
+</script>
+
+
 </body>
 
 </html>
