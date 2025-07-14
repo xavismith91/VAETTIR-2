@@ -40,9 +40,6 @@
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
 
-
-
-
     <div class="container-fluid bg-dark text-light px-0 py-2">
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
@@ -64,6 +61,12 @@
                     <a class="btn btn-link text-light" href="https://www.instagram.com/vaettir_company/?igshid=MmU2YjMtzNjRIOQ%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+        </div>
+         <div id="darkModeSwitchContainer">
+                    <label id="darkModeSwitch">
+                        <input type="checkbox" id="darkSwitch" aria-label="Activar modo oscuro">
+                        <span class="slider"></span>
+                    </label>
         </div>
     </div>
     
@@ -524,6 +527,34 @@
 
     
     <script src="js/main.js"></script>
+
+    <script>
+// Guardar preferencia en localStorage
+const darkSwitch = document.getElementById('darkSwitch');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+function setDarkMode(on) {
+  document.body.classList.toggle('dark-mode', on);
+  if(on) {
+    localStorage.setItem('vaettir-darkmode', 'on');
+  } else {
+    localStorage.setItem('vaettir-darkmode', 'off');
+  }
+}
+
+// Inicializar según preferencia previa o sistema
+(function() {
+  const saved = localStorage.getItem('vaettir-darkmode');
+  if(saved === 'on' || (saved === null && prefersDark)) {
+    darkSwitch.checked = true;
+    setDarkMode(true);
+  }
+})();
+
+darkSwitch.addEventListener('change', function() {
+  setDarkMode(this.checked);
+});
+</script>
 </body>
 
 </html>
